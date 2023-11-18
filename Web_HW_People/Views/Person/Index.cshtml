@@ -1,0 +1,19 @@
+﻿@using Web_HW_People.Entites;
+
+@model IEnumerable<Person>
+<body>
+	<div>
+
+		<h1>This is <b>Index </b> page from <i>People</i> controller </h1>
+		<ul>
+			@foreach (Person person in Model)
+			{
+				<li>
+					<u>@person.FirstName + @person.Surname</u>
+				</li>
+			}
+		</ul>
+	</div>
+</body>
+
+
