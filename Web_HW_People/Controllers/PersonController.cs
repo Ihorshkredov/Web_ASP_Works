@@ -20,6 +20,7 @@ namespace Web_HW_People.Controllers
 
         public ActionResult<Personage> WitcherIntro() 
         {
+            //Add comment
             var result = personRepository.GetPeople().Where(p => p.FirstName == "Gerald").FirstOrDefault();
             return View(result);
         }
