@@ -5,7 +5,7 @@ namespace Web_HW_People.Entites
     public class Person
     {
         [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string FirstName { get; set; }
 
         public string Surname { get; set; }

@@ -1,4 +1,5 @@
 ﻿using Web_HW_People.Entites;
+using Web_HW_People.Models;
 
 namespace Web_HW_People.Repositories
 {
@@ -11,9 +12,18 @@ namespace Web_HW_People.Repositories
             context = new PeopleContext();
         }
 
-        public List<Person> GetPeople()
+        public List<Personage> GetPeople()
         {
-            return context.People.ToList();
+           var entitiesFromDb = context.People.ToList();
+            return
+                entitiesFromDb.Select(e => new Models.Personage
+                {
+                    FirstName = e.FirstName,
+                    Surname = e.Surname,
+                    Email = e.Email,
+                    Age = e.Age,
+
+                }).ToList();
         }
     }
 }
